@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   db:
     container_name: db
@@ -10,7 +9,6 @@ services:
       POSTGRES_PASSWORD: mypassword
     volumes:
       - db-data:/var/lib/postgresql/data
-
   backend:
     container_name: backend
     build: ./backend
@@ -23,7 +21,6 @@ services:
       - "5000:5000"
     depends_on:
       - db
-
   frontend:
     container_name: frontend
     build: ./frontend
@@ -31,6 +28,7 @@ services:
       - "8000:80"
     depends_on:
       - backend
-
 volumes:
   db-data:
+
+
